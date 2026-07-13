@@ -1,0 +1,438 @@
+/* ===========================
+   GLOBAL & RESET
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0056b3; 
+    --secondary-color: #333333;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --bg-light: #f4f7f6;
+    --bg-white: #ffffff;
+    --text-dark: #333333;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* ===========================
+   UTILITY CLASSES
+   =========================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.required {
+    color: var(--error-color);
+    font-weight: bold;
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--secondary-color);
+}
+
+.logo {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.tagline {
+    font-size: 18px;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+/* ===========================
+   COUNTER SECTION
+   =========================== */
+.counter-section {
+    background: var(--bg-white);
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    margin: 30px 0;
+    text-align: left;
+}
+
+.counter-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.counter-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 10px;
+}
+
+/* ===========================
+   BAND ROSTER SECTION
+   =========================== */
+.band-roster {
+    margin: 60px 0;
+}
+
+.band-roster h2,
+.voting-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 15px;
+    display: inline-block;
+}
+
+.section-description {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin: 15px 0 40px 0;
+}
+
+/* Bands Grid - CSS Grid Layout */
+.bands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+/* Band Card */
+.band-card {
+    background: var(--bg-white);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border-color); 
+    transition: background-color 0.2s ease;
+}
+
+.band-card:hover {
+    background-color: #f8f9fa;
+    border-color: var(--primary-color);
+}
+
+.band-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+.band-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.band-info {
+    padding: 25px;
+}
+
+.band-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.band-genre,
+.band-city,
+.band-song {
+    margin-bottom: 12px;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.band-genre .label,
+.band-city .label,
+.band-song .label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.band-genre .value,
+.band-city .value,
+.band-song .value {
+    color: var(--text-muted);
+}
+
+.band-description {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ===========================
+   VOTING SECTION
+   =========================== */
+.voting-section {
+    background: var(--bg-white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin: 60px 0;
+}
+
+/* Voting Form - Flexbox */
+.voting-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 15px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.char-count {
+    font-size: 12px;
+    color: var(--text-muted);
+    align-self: flex-end;
+}
+
+.char-count.warning {
+    color: var(--warning-color);
+}
+
+.char-count.valid {
+    color: var(--success-color);
+}
+
+/* Error Message Display (DOM Manipulation) */
+.error-message {
+    font-size: 13px;
+    color: var(--error-color);
+    display: none;
+    margin-top: 5px;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: var(--error-color);
+    background-color: rgba(245, 101, 101, 0.05);
+}
+
+/* Error Container */
+.error-container {
+    background-color: #fee;
+    border-left: 4px solid var(--error-color);
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.error-container.show {
+    display: block !important;
+}
+
+.error-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.error-container li {
+    color: var(--error-color);
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.error-container li:last-child {
+    margin-bottom: 0;
+}
+
+/* Success Message */
+.success-message {
+    background-color: #f0fdf4;
+    border-left: 4px solid var(--success-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.success-message p {
+    color: var(--success-color);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Submit Button */
+.btn-submit {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: 1px solid #004494;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.btn-submit:hover {
+    background-color: #004494; 
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.footer {
+    background: var(--text-dark);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 80px;
+}
+
+.footer p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.footer-note {
+    color: #cbd5e0;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 36px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    .band-roster h2,
+    .voting-section h2 {
+        font-size: 28px;
+    }
+
+    .bands-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .voting-section {
+        padding: 25px;
+    }
+
+    .voting-form {
+        gap: 20px;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 40px 0;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .band-roster h2,
+    .voting-section h2 {
+        font-size: 22px;
+    }
+
+    .band-card {
+        border-radius: 8px;
+    }
+
+    .voting-section {
+        padding: 20px;
+    }
+}
