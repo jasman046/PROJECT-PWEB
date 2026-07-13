@@ -65,7 +65,7 @@ $bands = [
     <main class="container">
         <!-- Hit Counter -->
         <section class="counter-section">
-            <p class="counter-text">👁️ Jumlah Kunjungan: <span class="counter-value"><?php echo $current_hits; ?></span></p>
+            <p class="counter-text">Jumlah Kunjungan: <span class="counter-value"><?php echo $current_hits; ?></span></p>
         </section>
 
         <!-- Band Roster -->
